@@ -44,7 +44,7 @@ print(" > Active GPU ids: {}".format(device_ids))
 
 best_loss = float('Inf')
 
-class Logger(object):
+class Logger(object):#输出日志
     def __init__(self, filepath = './log.txt', mode = 'w', stdout = None):
         if stdout == None:
             self.terminal = sys.stdout
