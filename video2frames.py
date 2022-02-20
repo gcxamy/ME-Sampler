@@ -21,7 +21,7 @@ def extract(video, tmpl='%06d.jpg'):
     # os.system(f'ffmpeg -i {VIDEO_ROOT}/{video} -vf -threads 1 -vf scale=-1:256 -q:v 0 '
     #           f'{FRAME_ROOT}/{video[:-5]}/{tmpl}')
     cmd = 'ffmpeg -i \"{}/{}\" -threads 1 -vf scale=-1:256 -q:v 0 \"{}/{}/%06d.jpg\"'.format(VIDEO_ROOT, video,
-                                                                                             FRAME_ROOT, video[:-5])
+                                                                                             FRAME_ROOT, video[:-5])#ffmpeg -i 文件名 参数选项 -f 格式 输出文件 视频转换成图片
     os.system(cmd)
 
 
