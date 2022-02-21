@@ -47,8 +47,8 @@ def CWLoss(logits, target, kappa=0):
     real = (target_onehot * logits).sum(1)[0]
     tmp_logit = ((1. - target_onehot) * logits - target_onehot*10000.)
     
-    other, other_class = logits.max(1)
-    sort_prob, sort_class = logits.sort()
+    other, other_class = logits.max(1)#按行取最大值
+    sort_prob, sort_class = logits.sort()#按行排序
     second_logit = sort_prob[0][-2].unsqueeze(0)
     second_class = sort_class[0][-2].unsqueeze(0)
     
