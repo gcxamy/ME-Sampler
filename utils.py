@@ -49,8 +49,8 @@ def CWLoss(logits, target, kappa=0):#target 为ground truth ,logits为未经激�
     
     other, other_class = logits.max(1)#按行取最大值
     sort_prob, sort_class = logits.sort()#按行排序，从小到大排序
-    second_logit = sort_prob[0][-2].unsqueeze(0)
-    second_class = sort_class[0][-2].unsqueeze(0)
+    second_logit = sort_prob[0][-2].unsqueeze(0)#第二高的置信分数
+    second_class = sort_class[0][-2].unsqueeze(0)#分数第二高的类
     
     return torch.clamp(torch.sum(logits)-second_logit, kappa), target.item(), real.item(), other.item(), other_class.item(), second_logit.item(), second_class.item()
     #return torch.clamp(other-5*real, kappa), target.item(), real.item(), other.item(), other_class.item(), second_logit.item(), second_class.item()
