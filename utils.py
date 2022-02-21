@@ -39,7 +39,7 @@ def save_images_noise(num_frame, noise_img, save_path):
         np.save(os.path.join(save_path,'noise_{:05d}.npy'.format(i)), noise_img[i])
 
 
-def CWLoss(logits, target, kappa=0):
+def CWLoss(logits, target, kappa=0):#target 为ground truth ,logits为未经sigmoid激活的网络输出
     logits = F.softmax(logits, dim=1)
     
     target_onehot = torch.zeros(1, 174).cuda()
