@@ -100,7 +100,7 @@ def main():
     
     transform_post = video.VideoGroupValTransform(size=args.input_size, mean = [0,0,0], std=[1,1,1])
     val_dataset = SomethingSomethingV2_revise(setting=args.val_list, 
-                                       root=args.data_dir, 
+                                       root=args.data_dir, #--data-dir /data/uts700/hu/smth-smth/smth-smth-val-frames \
                                        train=False,
                                        new_width=args.new_width, 
                                        new_height=args.new_height,
