@@ -8,7 +8,7 @@ import threading
 
 NUM_THREADS = 100
 VIDEO_ROOT = '/home/huzhang/dataset/smth-smth/smth-smth-val'         # Downloaded webm videos
-FRAME_ROOT = '/data/uts700/hu/smth-smth/smth-smth-val-frames'  # Directory for extracted frames
+FRAME_ROOT = '/data/uts700/hu/smth-smth/smth-smth-val-frames'  # Directory for extracted frames，是train.py里面的root :data dir
 
 
 def split(l, n):
