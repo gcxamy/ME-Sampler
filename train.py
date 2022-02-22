@@ -99,7 +99,7 @@ def main():
     global transform_post
     
     transform_post = video.VideoGroupValTransform(size=args.input_size, mean = [0,0,0], std=[1,1,1])
-    val_dataset = SomethingSomethingV2_revise(setting=args.val_list, 
+    val_dataset = SomethingSomethingV2_revise(setting=args.val_list, #--val-list /home/huzhang/dataset/smth-smth/i3d_index_attack.txt \
                                        root=args.data_dir, #--data-dir /data/uts700/hu/smth-smth/smth-smth-val-frames \
                                        train=False,
                                        new_width=args.new_width, 
@@ -136,8 +136,8 @@ def validate(val_loader, model, ctx):
     all_num_queries = 0.
     avg_query = 0.
 
-    mpeg4_video_file = args.mpeg4_video_file
-    frame_save_file = args.frame_save_file 
+    mpeg4_video_file = args.mpeg4_video_file #--mpeg4_video_file /data/uts700/hu/smth-smth/smth-smth-val-mpeg4/ \
+    frame_save_file = args.frame_save_file #--frame_save_file /data/uts700/hu/smth-smth/save_smth_imgs_i3d \
 
     #stdout_backup = sys.stdout
     #sys.stdout = Logger('./log.txt', 'w', stdout_backup)
