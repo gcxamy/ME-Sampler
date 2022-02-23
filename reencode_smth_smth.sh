@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$#" -ne 2 ]; then
-    echo "Usage: ./reencode.sh [input dir] [output dir]"
+    echo "Usage: ./reencode.sh [input dir] [output dir]"#第一个传进去的参数是放的webm的文件路径，第二个是需要输出保存的mpeg的文件的路径
 fi
 
 indir=$1
